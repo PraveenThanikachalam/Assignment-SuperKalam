@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import LeftSideBar from "./components/LeftSideBar";
+import RightSideBar from "./components/RightSideBar";
+import PlayBar from "./components/PlayBar";
+import FadeUp from "./Motions/FadingMotions";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + " h-screen  overflow-hidden flex "}>
+        <LeftSideBar />
+        {children}
+        <RightSideBar />
+        <PlayBar />
+      </body>
     </html>
   );
 }
