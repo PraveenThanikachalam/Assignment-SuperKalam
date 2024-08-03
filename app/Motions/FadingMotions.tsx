@@ -44,7 +44,7 @@ export default function MotionWrapper({
 
   return (
     <motion.div
-      variants={selectedMotion} // Use the selected motion
+      variants={selectedMotion}
       initial="hidden"
       animate="enter"
       className={classNames}
