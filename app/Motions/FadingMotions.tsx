@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 interface motionTypes {
   children: ReactNode;
   type: keyof Motions;
-  classNames: string;
+  className: string;
   duration: number;
 }
 
@@ -38,7 +38,7 @@ const motions: Motions = {
 export default function MotionWrapper({
   children,
   type,
-  classNames,
+  className,
   duration,
 }: motionTypes) {
   const selectedMotion = motions[type];
@@ -48,7 +48,7 @@ export default function MotionWrapper({
       variants={selectedMotion}
       initial="hidden"
       animate="enter"
-      className={classNames}
+      className={className}
       transition={{ duration: duration }}
     >
       {children}

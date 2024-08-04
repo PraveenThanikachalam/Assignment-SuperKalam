@@ -15,20 +15,22 @@ interface Types {
 
 export default function PlayList({ title, songList }: Types) {
   return (
-    <div className="flex flex-col">
+    <div className="flex p-4 md:p-0 flex-col">
       <div className="flex justify-between items-center gap-x-3">
-        <p className="font-bold text-[18px] tracking-wider">{title}</p>
+        <p className="font-bold text-white text-[18px] tracking-wider">
+          {title}
+        </p>
         <Link className="text-gray-400 px-2" href={""}>
           See all
         </Link>
       </div>
-      <div className="flex flex-col pt-2 gap-y-4 ">
+      <div className="flex flex-col pt-2 gap-y-2 ">
         {songList.map((item, idx) => (
           <button
-            className="flex justify-between items-center hover:bg-zinc-900 "
+            className="flex justify-between rounded-lg py-1 items-center hover:bg-zinc-900 "
             key={idx}
           >
-            <div className="flex items-center gap-x-3">
+            <div className="flex items-center pl-2  gap-x-3">
               <Image
                 className="w-[40px] h-[40px]"
                 src={item.thumbnail}

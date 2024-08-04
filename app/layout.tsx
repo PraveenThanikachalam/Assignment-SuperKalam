@@ -4,7 +4,7 @@ import "./globals.css";
 import LeftSideBar from "./components/LeftSideBar";
 import RightSideBar from "./components/RightSideBar";
 import PlayBar from "./components/PlayBar";
-import FadeUp from "./Motions/FadingMotions";
+import { GlobalContextProvider } from "./context/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,13 +22,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={
-          inter.className + " h-screen bg-zinc-900  overflow-hidden flex "
+          inter.className +
+          " h-screen bg-zinc-900 overflow-hidden md:flex   "
         }
       >
-        <LeftSideBar />
-        {children}
-        <RightSideBar />
-        <PlayBar />
+        <GlobalContextProvider>
+          <LeftSideBar />
+          {children}
+          <RightSideBar />
+          <PlayBar />
+        </GlobalContextProvider>
       </body>
     </html>
   );

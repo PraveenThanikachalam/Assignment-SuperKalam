@@ -10,7 +10,8 @@ import {
 } from "react-icons/pi";
 import Link from "next/link";
 import MotionWrapper from "../Motions/FadingMotions";
-import { useEffect } from "react";
+import { useGlobalContext } from "../context/store";
+import { IoClose } from "react-icons/io5";
 
 interface Links {
   routeName: string;
@@ -57,23 +58,34 @@ const Library: Array<Links> = [
 ];
 
 export default function LeftSideBar() {
+  const { buttonState, setButtonState } = useGlobalContext();
+
+  const onClickHandler = () => {
+    setButtonState(false);
+  };
+
   return (
     <MotionWrapper
-      classNames="bg-zinc-950 relative h-[90%] text-white w-[25%]"
+      className={
+        buttonState
+          ? "flex absolute w-[230px] h-full z-10 bg-black "
+          : "hidden w-[25%] bg-zinc-950 h-[90%] " +
+            " md:flex md:flex-col relative  text-white "
+      }
       duration={0.5}
       type={"FadeRight"}
     >
-      <div className="flex justify-between px-6 py-16">
+      <div className="md:flex justify-between hidden px-6 py-16">
         <a href="/">Logo</a>
-        <button onClick={() => console.log("hi")}>click me</button>
+        <button>click me</button>
       </div>
       <div className="pl-6 pt-5">
         <p className="pb-3 tracking-wider text-sm font-semibold text-gray-600">
           FEATURES
         </p>
-        <ul className="pl-1 flex gap-y-3 justify-center text-gray-400 items-start flex-col">
+        <ul className="pl-1 flex justify-center text-gray-400 items-start flex-col">
           {Features.map((links, idx) => (
-            <li key={idx}>
+            <li className="hover:bg-zinc-900 p-2 rounded-lg" key={idx}>
               <Link legacyBehavior href={links.href}>
                 <a href={links.href} className="flex gap-x-4 items-center">
                   {links.component}
@@ -86,9 +98,9 @@ export default function LeftSideBar() {
         <p className="pb-3 pt-4 tracking-wider text-sm font-semibold text-gray-600">
           LIBRARY
         </p>
-        <ul className="pl-1 flex gap-y-3 justify-center text-gray-400 items-start flex-col">
+        <ul className="pl-1 flex justify-center text-gray-400 items-start flex-col">
           {Library.map((links, idx) => (
-            <li key={idx}>
+            <li className="hover:bg-zinc-900 p-2 rounded-lg" key={idx}>
               <Link legacyBehavior href={links.href}>
                 <a className="flex gap-x-4 items-center">
                   {links.component}
@@ -99,7 +111,10 @@ export default function LeftSideBar() {
           ))}
         </ul>
       </div>
-      <div className="absolute inset-x-0 flex justify-center items-center border-2 border-white bottom-0 h-[30%] bg-zinc-900 text-white w-full ">
+      <button className="flex md:hidden justify-start" onClick={onClickHandler}>
+        <IoClose className="text-white m-4 w-6 h-6" />
+      </button>
+      <div className="absolute hidden inset-x-0 md:flex justify-center items-center border-2 border-white bottom-0 h-[30%] bg-zinc-900 text-white w-full ">
         Thumbnail
       </div>
     </MotionWrapper>
