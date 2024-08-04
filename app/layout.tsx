@@ -20,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " h-screen  overflow-hidden flex "}>
+      <body
+        className={
+          inter.className + " h-screen bg-zinc-900  overflow-hidden flex "
+        }
+      >
         <LeftSideBar />
         {children}
         <RightSideBar />

@@ -6,13 +6,13 @@ interface motionTypes {
   children: ReactNode;
   type: keyof Motions;
   classNames: string;
+  duration: number;
 }
 
 interface Motion extends Variants {
   hidden: { opacity: number; y: number; x: number };
   enter: { opacity: number; y: number; x: number };
 }
-
 
 interface Motions {
   FadeUp: Motion;
@@ -39,6 +39,7 @@ export default function MotionWrapper({
   children,
   type,
   classNames,
+  duration,
 }: motionTypes) {
   const selectedMotion = motions[type];
 
@@ -48,7 +49,7 @@ export default function MotionWrapper({
       initial="hidden"
       animate="enter"
       className={classNames}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: duration }}
     >
       {children}
     </motion.div>

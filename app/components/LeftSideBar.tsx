@@ -9,6 +9,8 @@ import {
   PiFileMinusBold,
 } from "react-icons/pi";
 import Link from "next/link";
+import MotionWrapper from "../Motions/FadingMotions";
+import { useEffect } from "react";
 
 interface Links {
   routeName: string;
@@ -19,17 +21,17 @@ interface Links {
 const Features: Array<Links> = [
   {
     routeName: "Home",
-    href: "/home",
+    href: "/",
     component: <GrHomeRounded className="w-5 ml-[1.5px] mr-[10px] h-5" />,
   },
   {
     routeName: "Discover",
-    href: "/discover",
+    href: "",
     component: <PiCompassBold className="w-6 mr-2 h-6 " />,
   },
   {
     routeName: "Collections",
-    href: "/collections",
+    href: "",
     component: <MdOutlineLibraryMusic className="w-6 mr-2 h-6" />,
   },
 ];
@@ -37,26 +39,30 @@ const Features: Array<Links> = [
 const Library: Array<Links> = [
   {
     routeName: "Downloads",
-    href: "/",
+    href: "",
     component: (
       <PiDownloadSimpleBold className="w-5 ml-[1.5px] mr-[10px] h-5" />
     ),
   },
   {
     routeName: "Favourites",
-    href: "/discover",
+    href: "",
     component: <TbMusicHeart className="w-6 mr-2 h-6 " />,
   },
   {
     routeName: "Local Files",
-    href: "/collections",
+    href: "",
     component: <PiFileMinusBold className="w-6 mr-2 h-6" />,
   },
 ];
 
 export default function LeftSideBar() {
   return (
-    <div className="bg-zinc-950 relative h-[90%] text-white w-[25%]">
+    <MotionWrapper
+      classNames="bg-zinc-950 relative h-[90%] text-white w-[25%]"
+      duration={0.5}
+      type={"FadeRight"}
+    >
       <div className="flex justify-between px-6 py-16">
         <a href="/">Logo</a>
         <button onClick={() => console.log("hi")}>click me</button>
@@ -93,9 +99,9 @@ export default function LeftSideBar() {
           ))}
         </ul>
       </div>
-      <div className="absolute inset-x-0 flex justify-center items-center border-2 border-white bottom-0 h-[30%] bg-zinc-950 text-white w-full ">
+      <div className="absolute inset-x-0 flex justify-center items-center border-2 border-white bottom-0 h-[30%] bg-zinc-900 text-white w-full ">
         Thumbnail
       </div>
-    </div>
+    </MotionWrapper>
   );
 }
