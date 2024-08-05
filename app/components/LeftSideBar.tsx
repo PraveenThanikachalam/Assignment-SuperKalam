@@ -12,6 +12,7 @@ import Link from "next/link";
 import MotionWrapper from "../Motions/FadingMotions";
 import { useGlobalContext } from "../context/store";
 import { IoClose } from "react-icons/io5";
+import { TbChevronDown } from "react-icons/tb";
 
 interface Links {
   routeName: string;
@@ -76,10 +77,15 @@ export default function LeftSideBar() {
       type={"FadeRight"}
     >
       <div className="lg:flex justify-between hidden px-6 py-16">
-        <a className="text-white" href="/">
+        <a
+          className="text-black justify-center flex items-center font-bold bg-white  w-16 rounded-full h-16"
+          href="/"
+        >
           Logo
         </a>
-        <button className="text-white">click me</button>
+        <button className="text-white">
+          <TbChevronDown className="w-6 h-6" />
+        </button>
       </div>
       <div className="pl-6 pt-5">
         <p className="pb-3 tracking-wider text-sm font-semibold text-gray-600">
