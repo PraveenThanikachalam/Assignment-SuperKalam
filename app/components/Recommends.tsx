@@ -33,7 +33,7 @@ export default function Recommands({ title, items }: Types) {
                 alt={""}
               />
             </div>
-            <div className="w-[200px] sm:pl-6 md:pl-1 flex justify-start flex-col">
+            <div className="sm:w-[200px] mx:w-full mx:pl-10 sm:pl-6 md:pl-1 flex justify-start flex-col">
               <h3 className="pt-2 font-bold tracking-wider">{item.desp1}</h3>
               <h3 className="text-gray-400 text-sm">{item.desp2}</h3>
             </div>
