@@ -5,7 +5,7 @@ interface songList {
   songName: string;
   authorName: string;
   thumbnail: any;
-  time: number;
+  time: string;
 }
 
 interface Types {
@@ -38,10 +38,10 @@ export default function PlayList({ title, songList }: Types) {
               />
               <div className="flex flex-col">
                 <h3 className="text-white">{item.songName}</h3>
-                <h4 className="">{item.authorName}</h4>
+                <h4 className="text-white">{item.authorName}</h4>
               </div>
             </div>
-            <h3 className="text-gray-400 text-sm p-2">{item.time}min ago</h3>
+            <h3 className="text-gray-400 text-sm p-2">{item.time}</h3>
           </button>
         ))}
       </div>

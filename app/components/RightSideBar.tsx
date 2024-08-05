@@ -5,7 +5,7 @@ import MotionWrapper from "../Motions/FadingMotions";
 import { PiBellSimpleLight } from "react-icons/pi";
 import { TbChevronDown } from "react-icons/tb";
 import PlayList from "./PlayList";
-import pic from "@/public/pic.png";
+import cover from "@/public/covers/recent.jpg";
 import { useGlobalContext } from "../context/store";
 import { IoClose } from "react-icons/io5";
 
@@ -13,26 +13,26 @@ const Songs = [
   {
     songName: "the song",
     authorName: "Praveen",
-    thumbnail: pic,
-    time: 4,
+    thumbnail: cover,
+    time: "4min ago",
   },
   {
     songName: "the song",
     authorName: "Praveen",
-    thumbnail: pic,
-    time: 4,
+    thumbnail: cover,
+    time: "10min ago",
   },
   {
     songName: "the song",
     authorName: "Praveen",
-    thumbnail: pic,
-    time: 4,
+    thumbnail: cover,
+    time: "1hr ago",
   },
   {
     songName: "the song",
     authorName: "Praveen",
-    thumbnail: pic,
-    time: 4,
+    thumbnail: cover,
+    time: "2days ago",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function RightSideBar() {
       duration={0.5}
       className={
         buttonTwoState
-          ? " absolute flex w-full flex-col bg-black p-3  h-full overflow-y-auto z-50 "
+          ? " absolute flex w-full md:w-[50%] flex-col bg-black p-3  h-full overflow-y-auto z-50 "
           : " hidden w-[25%] h-[90%] px-6 py-12  lg:flex flex-col gap-y-5  overflow-y-auto bg-zinc-950 text-white"
       }
       type={"FadeLeft"}
