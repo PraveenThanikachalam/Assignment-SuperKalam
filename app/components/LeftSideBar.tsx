@@ -70,14 +70,16 @@ export default function LeftSideBar() {
         buttonState
           ? "flex absolute w-[230px] h-full z-10 bg-black "
           : "hidden w-[25%] bg-zinc-950 h-[90%] " +
-            " md:flex md:flex-col relative  text-white "
+            " lg:flex md:flex-col relative  text-white "
       }
       duration={0.5}
       type={"FadeRight"}
     >
-      <div className="md:flex justify-between hidden px-6 py-16">
-        <a href="/">Logo</a>
-        <button>click me</button>
+      <div className="lg:flex justify-between hidden px-6 py-16">
+        <a className="text-white" href="/">
+          Logo
+        </a>
+        <button className="text-white">click me</button>
       </div>
       <div className="pl-6 pt-5">
         <p className="pb-3 tracking-wider text-sm font-semibold text-gray-600">
@@ -111,7 +113,7 @@ export default function LeftSideBar() {
           ))}
         </ul>
       </div>
-      <button className="flex md:hidden justify-start" onClick={onClickHandler}>
+      <button className="flex lg:hidden justify-start" onClick={onClickHandler}>
         <IoClose className="text-white m-4 w-6 h-6" />
       </button>
       <div className="absolute hidden inset-x-0 md:flex justify-center items-center border-2 border-white bottom-0 h-[30%] bg-zinc-900 text-white w-full ">

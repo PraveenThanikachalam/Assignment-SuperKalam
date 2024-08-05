@@ -34,7 +34,7 @@ const Items1 = [
 
 export default function Home() {
   return (
-    <div className="w-full md:relative absolute md:h-full h-[90%] overflow-y-scroll text-white px-2 md:px-16 py-5 md:py-10 flex flex-col gap-y-5 md:gap-y-10 bg-zinc-900">
+    <div className="w-full md:relative absolute lg:h-full h-[90%] overflow-y-scroll overflow-x-hidden text-white px-2 md:px-10 lg:px-16 py-5 md:py-10 flex flex-col gap-y-5 md:gap-y-10 bg-zinc-900">
       <StickySearchBar />
       <div className="h-[300px] bg-white p-4 rounded-lg w-full">
         <Image className="object-cover w-full h-full" src={banner} alt={""} />

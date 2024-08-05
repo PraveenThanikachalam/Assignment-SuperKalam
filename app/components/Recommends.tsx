@@ -15,15 +15,18 @@ export default function Recommands({ title, items }: Types) {
   return (
     <div>
       <div className="flex w-full justify-between items-end">
-        <h3 className="text-white font-bold tracking-wider text-3xl">
+        <h3 className="text-white font-bold tracking-wider mx:text-2xl sm:text-3xl">
           {title}
         </h3>
         <h4 className="self-end text-gray-400 p-0 pr-2">See all</h4>
       </div>
-      <div className="grid md:grid-cols-5 grid-cols-2 md:pl-5 md:gap-x-4 py-4 gap-y-3 ">
+      <div className="grid lg:grid-cols-5 md:grid-cols-3 mx:grid-cols-1 sm:grid-cols-2 md:pl-5 md:gap-x-4 py-4 gap-y-3 ">
         {items.map((item, idx) => (
-          <div className="" key={idx}>
-            <div className="rounded-md overflow-hidden  w-[200px] h-[200px]">
+          <div
+            className="mx:justify-center mx:items-center mx:w-full mx:flex mx:flex-col"
+            key={idx}
+          >
+            <div className="rounded-md overflow-hidden mx:w-[300px] mx:h-[300px] sm:w-[200px] sm:h-[200px]">
               <Image
                 className="object-cover w-full h-full "
                 src={item.thumbnail}

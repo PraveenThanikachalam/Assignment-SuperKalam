@@ -46,8 +46,8 @@ export default function RightSideBar() {
       duration={0.5}
       className={
         buttonTwoState
-          ? " absolute flex w-full flex-col bg-black p-3  h-full overflow-y-scroll z-50 "
-          : " hidden w-[25%] h-[90%] px-6 py-12  md:flex flex-col gap-y-5  overflow-y-scroll bg-zinc-950 text-white"
+          ? " absolute flex w-full flex-col bg-black p-3  h-full overflow-y-auto z-50 "
+          : " hidden w-[25%] h-[90%] px-6 py-12  lg:flex flex-col gap-y-5  overflow-y-auto bg-zinc-950 text-white"
       }
       type={"FadeLeft"}
     >
@@ -65,7 +65,7 @@ export default function RightSideBar() {
         <TbChevronDown className="w-6 h-6 text-white" />
         <button
           onClick={onClickHandler}
-          className="flex md:hidden justify-start"
+          className="flex lg:hidden justify-start"
         >
           <IoClose className="text-white m-4 w-6 h-6" />
         </button>

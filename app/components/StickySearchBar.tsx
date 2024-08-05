@@ -17,18 +17,18 @@ export default function StickySearchBar() {
 
   return (
     <div className="flex gap-x-6 items-center justify-center">
-      <div className="md:flex hidden gap-x-4">
+      <div className="lg:flex hidden gap-x-4">
         <GoChevronLeft className="w-6 h-6" />
         <GoChevronRight className="w-6 h-6" />
       </div>
       <div className="w-full justify-center items-center flex">
         <button
           onClick={onClickHandlerOne}
-          className="w-7 h-7 flex md:hidden mr-2"
+          className="w-7 h-7 flex lg:hidden mr-2"
         >
           <GoChevronLeft className=" w-full h-full " />
         </button>
-        <button className="bg-white rounded-l-full w-10 p-4">
+        <button className="bg-white border-white rounded-l-full w-10 p-4">
           <LuSearch className="text-black w-6 h-6" />
         </button>
         <input
@@ -38,12 +38,12 @@ export default function StickySearchBar() {
         />
         <button
           onClick={onClickHandlerTwo}
-          className="w-7 h-7 flex md:hidden ml-2"
+          className="w-7 h-7 flex lg:hidden ml-2"
         >
           <GoChevronRight className="w-full h-full" />
         </button>
       </div>
-      <BsThreeDots className="w-6 hidden md:flex h-6 text-white" />
+      <BsThreeDots className="w-6 hidden lg:flex h-6 text-white" />
     </div>
   );
 }
